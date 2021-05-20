@@ -1,78 +1,79 @@
 {
-	"name": "dpa-tool",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"commit": "cz",
-		"prepare": "husky install",
-		"check-types": "tsc --pretty --noEmit",
-		"format": "npm run prettier -- --write",
-		"lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx,.json",
-		"prettier": "prettier --ignore-path .prettierignore \"**/*.+(js|json|ts|tsx|css|html|md)\" --write"
-	},
-	"lint-staged": {
-		"*.+(js|ts|tsx)": [
-			"npm run lint --fix",
-			"npm run format",
-			"git add -A"
-		],
-		"*.+(md|css|html)": [
-			"npm run format",
-			"git add -A"
-		],
-		"package.json": [
-			"sort-package-json",
-			"git add -A"
-		]
-	},
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-conventional-changelog"
-		}
-	},
-	"dependencies": {
-		"@chakra-ui/react": "^1.6.2",
-		"@emotion/react": "^11.4.0",
-		"@emotion/styled": "^11.3.0",
-		"@sentry/nextjs": "^6.4.1",
-		"error": "10.4.0",
-		"framer-motion": "^4.1.17",
-		"next": "10.2.1",
-		"react": "17.0.2",
-		"react-dom": "17.0.2"
-	},
-	"devDependencies": {
-		"@commitlint/cli": "^12.1.4",
-		"@commitlint/config-conventional": "^12.1.4",
-		"@types/react": "^17.0.6",
-		"@typescript-eslint/eslint-plugin": "^4.24.0",
-		"@typescript-eslint/parser": "^4.24.0",
-		"cz-conventional-changelog": "^3.3.0",
-		"eslint": "^7.26.0",
-		"eslint-config-airbnb": "^18.2.1",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-config-react-app": "^6.0.0",
-		"eslint-import-resolver-root-import": "^1.0.4",
-		"eslint-plugin-eslint-comments": "^3.2.0",
-		"eslint-plugin-import": "^2.23.2",
-		"eslint-plugin-json-format": "^2.0.1",
-		"eslint-plugin-jsx-a11y": "^6.4.1",
-		"eslint-plugin-prettier": "^3.4.0",
-		"eslint-plugin-react": "^7.23.2",
-		"eslint-plugin-react-hooks": "^4.2.0",
-		"husky": "^6.0.0",
-		"lint-staged": "^11.0.0",
-		"prettier": "^2.3.0",
-		"semantic-release": "^17.4.3",
-		"sort-package-json": "^1.50.0",
-		"typescript": "^4.2.4"
-	},
-	"release": {
-		"branches": [
-			"main"
-		]
-	}
+  "name": "dpa-tool",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "commit": "cz",
+    "prepare": "husky install",
+    "check-types": "tsc --pretty --noEmit",
+    "format": "npm run prettier -- --write",
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx,.json",
+    "prettier": "prettier --ignore-path .prettierignore \"**/*.+(js|json|ts|tsx|css|html|md)\" --write"
+  },
+  "lint-staged": {
+    "*.+(js|ts|tsx)": [
+      "npm run lint --fix",
+      "npm run format",
+      "git add -A"
+    ],
+    "*.+(md|css|html)": [
+      "npm run format",
+      "git add -A"
+    ],
+    "package.json": [
+      "sort-package-json",
+      "git add -A"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.2",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@sentry/nextjs": "^6.4.1",
+    "error": "10.4.0",
+    "framer-motion": "^4.1.17",
+    "next": "10.2.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@types/react": "^17.0.6",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-import-resolver-root-import": "^1.0.4",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0",
+    "semantic-release": "^17.4.3",
+    "sort-package-json": "^1.50.0",
+    "typescript": "^4.2.4"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
 }
