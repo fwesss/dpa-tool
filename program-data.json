@@ -1,0 +1,54 @@
+{
+  "programs": [
+    {
+      "name": "CalHFA FHA",
+      "slug": "calhfa-fha",
+      "agency": "CalHFA"
+    },
+    {
+      "name": "CalHFA Conventional",
+      "slug": "calhfa-conventional",
+      "agency": "CalHFA"
+    },
+    {
+      "name": "CalPLUS FHA",
+      "slug": "calplus-fha",
+      "agency": "CalHFA"
+    },
+    {
+      "name": "CalPLUS Conventional",
+      "slug": "calplus-conventional",
+      "agency": "CalHFA"
+    },
+    {
+      "name": "Platinum FHA",
+      "slug": "platinum-fha",
+      "agency": "GSFA"
+    },
+    {
+      "name": "Platinum Conventional",
+      "slug": "platinum-conventional",
+      "agency": "GSFA"
+    },
+    {
+      "name": "Open Doors FHA",
+      "slug": "open-doors-fha",
+      "agency": "GSFA"
+    },
+    {
+      "name": "Open Doors conventional",
+      "slug": "open-doors-conventional",
+      "agency": "GSFA"
+    },
+    {
+      "name": "Expanded Open Doors FHA",
+      "slug": "expanded-open-doors-fha",
+      "agency": "GSFA"
+    },
+    {
+      "name": "Expanded Open Doors Conventional",
+      "slug": "expanded-open-doors-conventional",
+      "agency": "GSFA"
+    }
+  ]
+}
