@@ -1,3 +1,4 @@
+import { ColorModeScript } from "@chakra-ui/react"
 import Document, {
   Html,
   Head,
@@ -5,7 +6,6 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document"
-import { ColorModeScript } from "@chakra-ui/react"
 import React, { ReactElement, ReactFragment } from "react"
 
 class MyDocument extends Document {
@@ -22,7 +22,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="icon" href="/favicon.ico" />
+          <link href="/favicon.ico" rel="icon" />
         </Head>
         <body>
           <ColorModeScript initialColorMode="light" />
