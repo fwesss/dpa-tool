@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/require-await */
 
-import { FC } from "react"
-import { AppProps } from "next/app"
-import { init } from "@sentry/nextjs"
 import { Box, ChakraProvider, Flex } from "@chakra-ui/react"
-import theme from "../theme/index"
-import ProgramFilter from "../components/ProgramFilter"
+import { init } from "@sentry/nextjs"
+import { AppProps } from "next/app"
+import { FC } from "react"
+import { Provider } from "react-redux"
+
+import { store } from "../app/store"
 import NavSidebar from "../components/nav/NavSidebar"
-import data from "../program-data.json"
+import ProgramFilter from "../components/programFilter/ProgramFilter"
+import data, { Program, Programs } from "../program-data"
+import theme from "../theme/index"
 
 init({
   dsn: "https://a7cf5bef4a6f4bd396e719be490aff3b@o481108.ingest.sentry.io/5774364",
@@ -19,18 +22,14 @@ init({
 })
 
 interface MyAppProps extends AppProps {
-  agencies: string[]
-  programs: {
-    name: string
-    slug: string
-    agency: string
-  }[]
+  agencies: Program["agency"][]
+  programs: Programs
 }
 
 interface MyFC<T> extends FC<T> {
   getInitialProps: () => Promise<{
-    programs: { name: string; slug: string; agency: string }[]
-    agencies: string[]
+    programs: Programs
+    agencies: Program["agency"][]
   }>
 }
 
@@ -40,28 +39,30 @@ const MyApp: MyFC<MyAppProps> = ({
   agencies,
   programs,
 }) => (
-  <ChakraProvider theme={theme}>
-    <Box height="100vh" overflow="hidden" position="relative">
-      <Flex h="full" id="app-container">
-        <NavSidebar agencies={agencies} programs={programs} />
+  <Provider store={store}>
+    <ChakraProvider theme={theme}>
+      <Box height="100vh" overflow="hidden" position="relative">
+        <Flex h="full" id="app-container">
+          <NavSidebar agencies={agencies} programs={programs} />
 
-        <Box bg="white" flex="1" p="6">
-          <Component {...pageProps} />
-        </Box>
+          <Box bg="white" flex="1" p="6">
+            <Component {...pageProps} />
+          </Box>
 
-        <ProgramFilter />
-      </Flex>
-    </Box>
-  </ChakraProvider>
+          <ProgramFilter />
+        </Flex>
+      </Box>
+    </ChakraProvider>
+  </Provider>
 )
 
 MyApp.getInitialProps = async (): Promise<{
-  programs: { name: string; slug: string; agency: string }[]
-  agencies: string[]
+  programs: Programs
+  agencies: Program["agency"][]
 }> => ({
-  programs: data.programs,
+  programs: data,
   agencies: Array.from(
-    new Set(data.programs.map(({ agency }: { agency: string }) => agency))
+    new Set(Object.values(data).map(({ agency }) => agency))
   ),
 })
 
